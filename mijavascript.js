@@ -134,7 +134,7 @@ while (true) {
                 while (true) {
                     preguntarCantidad = parseInt(prompt("Ingrese la cantidad. Precio por unidad: " + producto.precio + ". Cantidad en stock: " + producto.stock))
                     if(isNaN(preguntarCantidad) || (preguntarCantidad <= 0)){
-                        alert("Ingrese una cantidad válida");
+                        alert("Ingrese una cantidad mayor a 0");
                         continue;
                     }else{
                         if (preguntarCantidad <= producto.stock){
@@ -143,7 +143,6 @@ while (true) {
                             alert("Usted a agregado al catalogo: " + preguntarCantidad + " x " + producto.nombre + ". Su subtotal es de: " + precioFinal);
                         }else{
                             alert("No contamos con esa cantidad de stock");
-                            continue;
                         }
                     }
                     break; 
