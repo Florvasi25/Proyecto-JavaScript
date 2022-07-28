@@ -1,16 +1,16 @@
 //1RA PRUEBA MODIFICANDO DOM MEDIANTE PROMPT
 
-let primerPregunta = prompt("Quiere cambiar el nombre del local?").toUpperCase();
+// let primerPregunta = prompt("Quiere cambiar el nombre del local?").toUpperCase();
 
-if (primerPregunta === "SI") {
-    let textoPrompt = prompt("Ingrese el nuevo nombre del local")
-    let nuevoTexto = (document.querySelector(".display-4").textContent = textoPrompt);
-} else {
-    alert("Gracias, vuelvas prontos");
-}
+// if (primerPregunta === "SI") {
+//     let textoPrompt = prompt("Ingrese el nuevo nombre del local")
+//     let nuevoTexto = (document.querySelector(".display-4").textContent = textoPrompt);
+// } else {
+//     alert("Gracias, vuelvas prontos");
+// }
 
 //2DA PRUEBA AGREGANDO ARRAY DE PRODUCTOS
-si
+
 // let productos = [
 //         {id: 1, nombre: "Diseño", precio: "1200"},
 //         {id: 2, nombre: "Data", precio: "1200"},
