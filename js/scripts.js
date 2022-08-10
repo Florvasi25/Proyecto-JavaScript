@@ -6,26 +6,34 @@ const productos = [
     {
         id: 1, 
         title:"Pizza Napolitana", 
-        price: 500,
-        image: "https://cdn7.kiwilimon.com/recetaimagen/13003/640x426/5707.jpg.webp",
+        price: 1200,
+        image: "../Imagenes/pizza-1.png",
         category: "Pizzas"
     },
 
     {
         id: 2, 
-        title:"Pizza Caprese", 
-        price: 5000,
-        image: "https://static-sevilla.abc.es/media/gurmesevilla/2013/04/pizza-margarita.jpg",
+        title:"Pizza Nduja", 
+        price: 1300,
+        image: "../Imagenes/pizza-2.png",
         category: "Pizzas"
 
     },
 
     {
         id: 3, 
-        title:"Roll Salmon", 
-        price: 50,
-        image: "https://t1.rg.ltmcdn.com/es/posts/8/0/4/sushi_con_wasabi_39408_600_square.jpg",
-        category: "Sushi"
+        title:"Hamburguesa con Queso", 
+        price: 1100,
+        image: "../Imagenes/hamburguesa-1.png",
+        category: "Hamburguesas"
+    },
+
+    {
+        id: 4, 
+        title:"Hamburguesa con Huevo", 
+        price: 1050,
+        image: "../Imagenes/hamburguesa-2.png",
+        category: "Hamburguesas"
     },
 
 ]
@@ -33,7 +41,7 @@ const productos = [
 function imprimirCards(producto) {
     const idButton = `add-cart${producto.id}`
     document.getElementById("seccion-card").innerHTML += `<div class="col mb-5">
-        <div class="card h-100">
+        <div class="card">
             <img class="card-img-top" src="${producto.image}"/>
             <div class="card-body p-4">
                 <div class="text-center">
@@ -70,53 +78,18 @@ productos.forEach((producto) => {
     imprimirCards(producto)
 })
 
-// const quitarProducto = (producto) => {
-//     const idQuitar = `remove-cart${producto.id}`
-//     document.getElementById("productos-agregados").innerHTML += 
-//     `<tr>
-//     <td>${producto.title}</td>
-//     <td><img src="${producto.image}" style="width: 100px"></td>
-//     <td>${producto.price}</td>
-//     <td><button id=${idQuitar}>Quitar Producto</button>
-//     </tr>`
-//     document.getElementById("idQuitar").onclick = () => {
-//         carrito.splice(producto.id)
-//     }
-// }
-
-function productosEnCarrito(producto) {
-    let productoEliminado = carrito.findIndex(p => p.id === producto.id);
-    console.log(productoEliminado)
-    const idQuitar = `remove-cart${productoEliminado}`
-    const filaCarrito = `fila-cart${productoEliminado}`;
-    document.getElementById("productos-agregados").innerHTML += 
-    `<tr id=${filaCarrito}>
-    <td>${producto.title}</td>
-    <td><img src="${producto.image}" style="width: 100px"></td>
-    <td>${producto.price}</td>
-    <td><button id=${idQuitar}>Quitar Producto</button></td>
-    </tr>`
-    document.getElementById(idQuitar).onclick = () => {
-        carrito.splice(productoEliminado)
-        document.getElementById(filaCarrito).remove()
-        document.getElementById("cart-total").innerHTML = carrito.length;
-        localStorage.setItem("carrito", JSON.stringify(carrito))
-    }
+function mostrarCarrito() {
+    let filasCarrito = "";
+    carrito.forEach((producto) => {
+        filasCarrito += `<tr>
+        <td>${producto.title}</td>
+        <td><img src="${producto.image}" style="width: 100px"></td>
+        <td>${producto.price}</td>
+        <td><button class="remove" id=${producto.id}>Quitar Producto</button></td>
+        </tr>`;
+    } )
+    document.getElementById("productos-agregados").innerHTML = filasCarrito;
 }
-
-// function productosEnCarrito(producto) {
-//     document.getElementById("productos-agregados").innerHTML += 
-//     `<tr>
-//     <td>${producto.title}</td>
-//     <td><img src="${producto.image}" style="width: 100px"></td>
-//     <td>${producto.price}</td>
-//     <td><button>Quitar Producto</button></td>
-//     </tr>`  
-// }
-
-carrito.forEach((producto) => {
-    productosEnCarrito(producto)
-})
 
 productos.forEach((producto) => {
     const idButton = `add-cart${producto.id}`
@@ -124,6 +97,19 @@ productos.forEach((producto) => {
         carrito.push(producto);
         document.getElementById("cart-total").innerHTML = carrito.length;
         localStorage.setItem("carrito", JSON.stringify(carrito))
-        productosEnCarrito(producto)
+        mostrarCarrito()
     }
 })
+
+document.getElementById("productos-agregados").onclick = (e) => {
+    console.log(e.target)
+    if (e.target.className === "remove") {
+        let productoEliminado = carrito.findIndex((p) => p.id === e.target.id);
+        carrito.splice(productoEliminado, 1)
+        mostrarCarrito()
+        document.getElementById("cart-total").innerHTML = carrito.length;
+        localStorage.setItem("carrito", JSON.stringify(carrito))
+    }
+}
+
+mostrarCarrito()
