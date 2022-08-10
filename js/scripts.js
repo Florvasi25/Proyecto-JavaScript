@@ -7,7 +7,7 @@ const productos = [
         id: 1, 
         title:"Pizza Napolitana", 
         price: 1200,
-        image: "../Imagenes/pizza-1.png",
+        image: "http://127.0.0.1:5502/Imagenes/pizza-1.png",
         category: "Pizzas"
     },
 
@@ -15,7 +15,7 @@ const productos = [
         id: 2, 
         title:"Pizza Nduja", 
         price: 1300,
-        image: "../Imagenes/pizza-2.png",
+        image: "http://127.0.0.1:5502/Imagenes/pizza-2.png",
         category: "Pizzas"
 
     },
@@ -24,7 +24,7 @@ const productos = [
         id: 3, 
         title:"Hamburguesa con Queso", 
         price: 1100,
-        image: "../Imagenes/hamburguesa-1.png",
+        image: "http://127.0.0.1:5502/Imagenes/hamburguesa-1.png",
         category: "Hamburguesas"
     },
 
@@ -32,7 +32,7 @@ const productos = [
         id: 4, 
         title:"Hamburguesa con Huevo", 
         price: 1050,
-        image: "../Imagenes/hamburguesa-2.png",
+        image: "http://127.0.0.1:5502/Imagenes/hamburguesa-2.png",
         category: "Hamburguesas"
     },
 
@@ -46,7 +46,7 @@ function imprimirCards(producto) {
             <div class="card-body p-4">
                 <div class="text-center">
                     <h5 class="fw-bolder">${producto.title}</h5>
-                    <span class="text-muted">${producto.price}</span>
+                    <span class="text-muted">$${producto.price}</span>
                 </div>
             </div>
             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
