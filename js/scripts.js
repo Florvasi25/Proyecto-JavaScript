@@ -2,6 +2,7 @@ const carrito = JSON.parse(localStorage.getItem("carrito")) ?? [];
 document.getElementById("cart-total").innerHTML = carrito.length;
 
 
+
 const productos = [
     {
         id: 1, 
@@ -16,6 +17,7 @@ const productos = [
         title:"Pizza Nduja", 
         price: 1300,
         image: "./Imagenes/pizza-2.png",
+        description: "Pizza con salchicha italiana picante.",
         category: "Pizzas"
 
     },
@@ -33,6 +35,7 @@ const productos = [
         title:"Hamburguesa con Huevo", 
         price: 1050,
         image: "./Imagenes/hamburguesa-2.png",
+        description: "Hamburguesa de carne 100% vacuna.",
         category: "Hamburguesas"
     },
 
@@ -45,7 +48,8 @@ function imprimirCards(producto) {
             <img class="card-img-top" src="${producto.image}"/>
             <div class="card-body p-4">
                 <div class="text-center">
-                    <h5 class="fw-bolder">${producto.title}</h5>
+                    <h4 class="fw-bolder">${producto.title}</h4>
+                    <p class="description fs-">${producto?.description || ""}</p>
                     <span class="text-muted">$${producto.price}</span>
                 </div>
             </div>
@@ -84,7 +88,7 @@ function mostrarCarrito() {
         filasCarrito += `<tr>
         <td>${producto.title}</td>
         <td><img src="${producto.image}" style="width: 100px"></td>
-        <td>${producto.price}</td>
+        <td>$${producto.price}</td>
         <td><button class="remove" id=${producto.id}>Quitar Producto</button></td>
         </tr>`;
     } )
@@ -113,3 +117,16 @@ document.getElementById("productos-agregados").onclick = (e) => {
 }
 
 mostrarCarrito()
+
+swal("Quisiera acceder a un descuento?", {
+    buttons: {
+      cancel: "No gracias...",
+      catch: {
+        text: "Sí claro",
+        value: "descuento",
+      },
+    },
+  })
+  .then((value) => {
+    value === "descuento" ? swal("Aquí tiene su código de descuento: X8Y6S") : swal("Será la próxima :(");
+  });
