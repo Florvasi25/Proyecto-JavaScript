@@ -7,7 +7,7 @@ const productos = [
         id: 1, 
         title:"Pizza Napolitana", 
         price: 1200,
-        image: "http://127.0.0.1:5502/Imagenes/pizza-1.png",
+        image: "pizza-1.png",
         category: "Pizzas"
     },
 
@@ -15,7 +15,7 @@ const productos = [
         id: 2, 
         title:"Pizza Nduja", 
         price: 1300,
-        image: "http://127.0.0.1:5502/Imagenes/pizza-2.png",
+        image: "pizza-2.png",
         category: "Pizzas"
 
     },
@@ -24,7 +24,7 @@ const productos = [
         id: 3, 
         title:"Hamburguesa con Queso", 
         price: 1100,
-        image: "http://127.0.0.1:5502/Imagenes/hamburguesa-1.png",
+        image: "https://github.com/Florvasi25/Proyecto-JavaScript/blob/main/Imagenes/hamburguesa-1.png",
         category: "Hamburguesas"
     },
 
@@ -32,7 +32,7 @@ const productos = [
         id: 4, 
         title:"Hamburguesa con Huevo", 
         price: 1050,
-        image: "http://127.0.0.1:5502/Imagenes/hamburguesa-2.png",
+        image: "hamburguesa-2.png",
         category: "Hamburguesas"
     },
 
