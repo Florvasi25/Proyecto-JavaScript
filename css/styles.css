@@ -3556,7 +3556,7 @@ textarea.form-control-lg {
   z-index: 1000;
   display: none;
   min-width: 10rem;
-  padding: 0.5rem 0;
+  padding: 1rem 2rem;
   margin: 0;
   font-size: 1rem;
   color: #212529;
@@ -3566,6 +3566,7 @@ textarea.form-control-lg {
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
+  width: 700px;
 }
 .dropdown-menu[data-bs-popper] {
   top: 100%;
@@ -3937,25 +3938,37 @@ textarea.form-control-lg {
   list-style: none;
 }
 
-.nav-link {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: #0d6efd;
+.nav-link {  
+  padding: 0.2rem;
+  color: #000;
   text-decoration: none;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  cursor: pointer;
+  position: relative;
 }
-@media (prefers-reduced-motion: reduce) {
-  .nav-link {
-    transition: none;
-  }
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  transform-origin: right;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
 }
-.nav-link:hover, .nav-link:focus {
-  color: #0a58ca;
+
+.nav-link:hover::after {
+  transform-origin: left;
+  transform: scale(1);
 }
-.nav-link.disabled {
-  color: #6c757d;
-  pointer-events: none;
-  cursor: default;
+
+.nav-link:hover {
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
 }
 
 .nav-tabs {
@@ -4243,7 +4256,8 @@ textarea.form-control-lg {
     overflow: visible;
   }
   .navbar-expand-lg .navbar-collapse {
-    display: flex !important;
+    display: flex;
+    justify-content: end;
     flex-basis: auto;
   }
   .navbar-expand-lg .navbar-toggler {
@@ -7358,7 +7372,7 @@ textarea.form-control-lg {
 }
 
 .me-auto {
-  margin-right: auto !important;
+  margin-right: auto;
 }
 
 .mb-0 {
@@ -11292,4 +11306,16 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+
+.tituloMenu {
+  font-size: 30px;
+  padding: 20px 0 0 25px;
+  text-decoration: none;
+  color: black;
+}
+
+.tituloMenu:hover {
+  color: black;
+  font-weight: 500;
 }
