@@ -667,7 +667,7 @@ progress {
   }
 }
 .row {
-  --bs-gutter-x: 1.5rem;
+  --bs-gutter-x: 1rem;
   --bs-gutter-y: 0;
   display: flex;
   flex-wrap: wrap;
@@ -992,7 +992,7 @@ progress {
   }
 
   .col-sm-12 {
-    flex: 0 0 auto;
+    flex: column;
     width: 100%;
   }
 
@@ -2415,6 +2415,7 @@ textarea.form-control-lg {
   color: #212529;
   background-color: #fff;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  object-fit:contain;
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 16px 12px;
@@ -6756,7 +6757,14 @@ textarea.form-control-lg {
 }
 
 .d-flex {
-  display: flex !important;
+  display: flex;
+}
+
+@media (max-width: 700px) {
+  .d-flex {
+    display: flex;
+    flex-direction: column !important;
+  }
 }
 
 .d-inline-flex {
@@ -11310,7 +11318,7 @@ textarea.form-control-lg {
 
 .tituloMenu {
   font-size: 30px;
-  padding: 20px 0 0 25px;
+  padding: 20px 0 20px 25px;
   text-decoration: none;
   color: black;
 }
