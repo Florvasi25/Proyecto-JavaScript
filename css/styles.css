@@ -138,6 +138,13 @@ h3, .h3 {
 h4, .h4 {
   font-size: calc(1.275rem + 0.3vw);
 }
+
+@media (max-width: 700px) {
+  h4, .h4 {
+    font-size: medium;
+  }
+}
+
 @media (min-width: 1200px) {
   h4, .h4 {
     font-size: 1.5rem;
@@ -155,6 +162,12 @@ h6, .h6 {
 p {
   margin-top: 0;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 700px) {
+  p {
+    font-size: small;
+  }
 }
 
 abbr[title],
@@ -3010,11 +3023,19 @@ textarea.form-control-lg {
   border-radius: 0.25rem;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .btn {
     transition: none;
   }
 }
+
+@media (max-width: 700px) {
+  .btn {
+    font-size: small;
+  }
+}
+
 .btn:hover {
   color: #212529;
 }
@@ -3556,7 +3577,6 @@ textarea.form-control-lg {
   position: absolute;
   z-index: 1000;
   display: none;
-  min-width: 10rem;
   padding: 1rem 2rem;
   margin: 0;
   font-size: 1rem;
@@ -3569,6 +3589,7 @@ textarea.form-control-lg {
   border-radius: 0.25rem;
   width: 700px;
 }
+
 .dropdown-menu[data-bs-popper] {
   top: 100%;
   left: 0;
@@ -3941,40 +3962,12 @@ textarea.form-control-lg {
 
 .nav-link {  
   padding: 0.2rem;
-  color: #000;
-  text-decoration: none;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
-  cursor: pointer;
-  position: relative;
-}
-
-.nav-link::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  background: rgb(0, 0, 0);
-  transform-origin: right;
-  transform: scale(0);
-  transition: transform 0.3s ease-in-out;
-}
-
-.nav-link:hover::after {
-  transform-origin: left;
-  transform: scale(1);
-}
-
-.nav-link:hover {
-  color: rgb(0, 0, 0);
-  font-weight: bolder;
 }
 
 .nav-tabs {
   border-bottom: 1px solid #dee2e6;
 }
+
 .nav-tabs .nav-link {
   margin-bottom: -1px;
   background: none;
@@ -4522,6 +4515,7 @@ textarea.form-control-lg {
 
 .card {
   padding-top: 10px;
+  margin: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -4533,7 +4527,12 @@ textarea.form-control-lg {
   border: 2px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.5rem;
   width: 200px;
-  height: 400px;
+  height: 350px;
+}
+@media (max-width: 700px) {
+  .card {
+    width: 150px
+  }
 }
 .card > hr {
   margin-right: 0;
@@ -4559,11 +4558,13 @@ textarea.form-control-lg {
 }
 
 .card-body {
-  flex: 1 1 auto;
+  flex: auto;
   padding: 1rem 0.5rem;
   display: flex;
   align-items: center;
 }
+
+
 
 .card-title {
   margin-bottom: 0.5rem;
@@ -4628,6 +4629,11 @@ textarea.form-control-lg {
 .card-img-bottom {
   width: 150px;
   height: fit-content;
+}
+@media (max-width: 700px) {
+  .card-img, .card-img-top, .card-img-bottom {
+    width: 125px;
+  }
 }
 
 .card-img,
@@ -6758,12 +6764,13 @@ textarea.form-control-lg {
 
 .d-flex {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media (max-width: 700px) {
   .d-flex {
     display: flex;
-    flex-direction: column !important;
   }
 }
 
@@ -11327,3 +11334,58 @@ textarea.form-control-lg {
   color: black;
   font-weight: 500;
 }
+
+.subtituloCategoria {
+  text-decoration: none;
+  color: #000;
+  transition: background-color 0.5s;
+  position: relative;
+}
+.subtituloCategoria::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0px;
+  height: 2px;
+  width: 100%;
+  background: black;
+  transform-origin: right;
+  transform: scale(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.subtituloCategoria:hover::after {
+  transform-origin: left;
+  transform: scale(1);
+}
+
+.subtituloCategoria:hover {
+  font-weight: bold;
+  color: black;
+}
+
+.colCarrito {
+  display: flex;
+
+}
+
+@media (max-width: 700px) {
+  .tituloCategoria {
+    font-size: 20px;
+  }
+  .tituloFav {
+    font-size: 20px;
+  }
+  .colCarrito {
+    display: flex;
+    flex-direction: column;
+  }
+  .dropdown-menu.show {
+    width: 350px;
+  }
+  .cantidad {
+    display: flex;
+  }
+}
+

@@ -12,8 +12,11 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body>
+
+        <!-- Navegación -->
+
         <nav class="navbar navbar-light bg-light">
-            <div class="container px-4 px-lg-5">
+            <div class="container">
                 <a class="navbar-brand" href="./index.html">La Flora</a>
                 <div id="navbarSupportedContent">
                     <div class="dropdown" style="right: 0; left: auto;">
@@ -28,7 +31,6 @@
                                     <thead>
                                         <tr>
                                         <th scope="col">Producto</th>
-                                        <th scope="col"></th>
                                         <th scope="col">Cantidad</th>
                                         <th scope="col">Precio</th>
                                         </tr>
@@ -44,7 +46,9 @@
                 </div>
             </div>
         </nav>
+
         <!-- Header-->
+
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-black">
@@ -53,22 +57,23 @@
                 </div>
             </div>
         </header>
-        <!-- Section-->
-        <section class="d-flex container-fluid cuerpo">
-            <div class="d-flex flex-column justify-content-start col-lg-1" style="padding-left: 50px">
-                <a class="tituloMenu" href="./index.html">Menu</a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" id="categoria">
-                </ul>
-            </div>
-            <div class="py-5 container">
-                <div class="row">
-                    <div>
-                        <div id="seccion-card" data-categoria="Hamburguesas" class="row justify-content-center"></div>
-                    </div>         
+        <section class="d-flex container-fluid">
+            <div class="row">
+                <div class="d-flex flex-column justify-content-start col-12 col-lg-2 col-sm-12" style="padding-left: 50px">
+                    <a class="tituloMenu" href="./index.html">Menu</a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4" id="categoria">
+                    </ul>
+                </div>
+                <div class="py-5 container col-lg-10 col-sm-12">
+                    <div class="d-flex flex-column align-items-center" id="tituloSeccion">                 
+                        <p class="tituloFav">Favoritos<div class="d-flex" id="cardsFavorite"></div></p>
+                    </div>
                 </div>
             </div>
         </section>
+
         <!-- Footer-->
+
         <footer class="py-5 bg-dark">
             <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2022</p></div>
         </footer>

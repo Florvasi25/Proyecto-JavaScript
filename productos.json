@@ -5,7 +5,8 @@
         "price": 1200,
         "image": "./Imagenes/pizza-1.png",
         "category": "Pizzas",
-        "quantity": 1
+        "quantity": 1,
+        "favorite": false
     },
     {
         "id": 2,
@@ -14,7 +15,8 @@
         "image": "./Imagenes/pizza-2.png",
         "description": "Pizza con salchicha italiana picante.",
         "category": "Pizzas",
-        "quantity": 1
+        "quantity": 1,
+        "favorite": true
     },
     {
         "id": 3,
@@ -22,7 +24,8 @@
         "price": 1100,
         "image": "./Imagenes/hamburguesa-1.png",
         "category": "Hamburguesas",
-        "quantity": 1
+        "quantity": 1,
+        "favorite": true
     },
     {
         "id": 4,
@@ -31,7 +34,8 @@
         "image": "./Imagenes/hamburguesa-2.png",
         "description": "Hamburguesa de carne 100% vacuna.",
         "category": "Hamburguesas",
-        "quantity": 1
+        "quantity": 1,
+        "favorite": true
     },
     {
         "id": 5,
@@ -39,7 +43,8 @@
         "price": 1050,
         "image": "./Imagenes/empanada-1.png",
         "category": "Empanadas",
-        "quantity": 1
+        "quantity": 1,
+        "favorite": true
     },
     {
         "id": 6,
@@ -48,6 +53,27 @@
         "image": "./Imagenes/empanada-2.png",
         "description": "Empanada de atún, aceitunas y cebolla de verdeo",
         "category": "Empanadas",
-        "quantity": 1
+        "quantity": 1,
+        "favorite": false
+    },
+    {
+        "id": 7,
+        "name": "Pizza Salame",
+        "price": 1300,
+        "image": "./Imagenes/pizza-2.png",
+        "description": "",
+        "category": "Pizzas",
+        "quantity": 1,
+        "favorite": false
+    },
+    {
+        "id": 8,
+        "name": "Pizza",
+        "price": 1300,
+        "image": "./Imagenes/pizza-2.png",
+        "description": "Pizza con salchicha italiana picante.",
+        "category": "Pizzas",
+        "quantity": 1,
+        "favorite": false
     }
 ]
