@@ -4531,7 +4531,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 700px) {
   .card {
-    width: 150px
+    width: 125px
   }
 }
 .card > hr {
@@ -4632,7 +4632,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 700px) {
   .card-img, .card-img-top, .card-img-bottom {
-    width: 125px;
+    width: 100px;
   }
 }
 
@@ -11381,10 +11381,10 @@ textarea.form-control-lg {
 
 @media (max-width: 700px) {
   .tituloCategoria {
-    font-size: 20px;
+    font-size: 17px;
   }
   .tituloFav {
-    font-size: 20px;
+    font-size: 17px;
   }
   .colCarrito {
     display: flex;
@@ -11397,4 +11397,3 @@ textarea.form-control-lg {
     display: flex;
   }
 }
-

@@ -24,7 +24,9 @@ const getProducts = async () => {
     anchor.setAttribute("data-categoria", categoria);
     anchor.innerHTML = categoria;
     anchor.onclick = () => {
-      document.getElementById(`scrollInto${categoria}`).scrollIntoView({behavior: "smooth"});
+      document
+        .getElementById(`scrollInto${categoria}`)
+        .scrollIntoView({ behavior: "smooth" });
     };
     listaLateral.appendChild(anchor);
   });
@@ -48,15 +50,17 @@ function createFavButton(producto) {
   anchorFav.style.cssText = `top: 0.5rem; right: 0.5rem`;
   anchorFav.setAttribute("name", botonFav);
   anchorFav.onclick = () => {
-    let indexFavorito = favoritos.findIndex((p) => p.id === producto.id);
-    if (indexFavorito == -1) {
+      let indexFavorito = favoritos.findIndex((p) => p.id === producto.id);
+      if (indexFavorito == -1) {
+        // let tituloFavorito = document.createElement("p");
+        // tituloFavorito.innerHTML = `<p class="tituloCategoria">Favoritos</p>`;
+        // tituloFav.appendChild(tituloFavorito);
       favoritos.push(producto);
     } else {
       favoritos.splice(indexFavorito, 1);
     }
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
     imprimirFavoritos();
-    // agregarAFavorito(producto)
     agregarAlCarrito(producto);
   };
   return anchorFav;
@@ -149,13 +153,19 @@ function mostrarCarrito() {
         </td>
         <td>
             <div class="cantidad">
-            <button class="remove-one btn btn-outline-dark mt-auto me-2" id=${producto.id}>-</button>
+            <button name="remove-one" class="btn btn-outline-dark mt-auto" id=${
+              producto.id
+            }>-</button>
             ${producto.qty}
-            <button class="add-one btn btn-outline-dark mt-auto ms-2" id=${producto.id}>+</button>
+            <button name="add-one" class="btn btn-outline-dark mt-auto" id=${
+              producto.id
+            }>+</button>
             </div>
         </td>
         <td>$${producto.price * producto.qty}</td>
-        <td><button class="remove btn btn-outline-dark mt-auto" id=${producto.id}>Quitar</button></td>
+        <td><button name="remove" class="btn btn-outline-dark mt-auto" id=${
+          producto.id
+        }>Quitar</button></td>
     </tr>`;
   });
   document.getElementById("productos-agregados").innerHTML = filasCarrito;
@@ -174,16 +184,16 @@ function precioTotal() {
 
 document.getElementById("productos-agregados").onclick = (e) => {
   let productoEliminado = carrito.findIndex((p) => p.id == e.target.id);
-  if (e.target.className === "remove") {
+  if (e.target.getAttribute("name") === "remove") {
     carrito.splice(productoEliminado, 1);
-  } else if (e.target.className === "remove-one") {
+  } else if (e.target.getAttribute("name") === "remove-one") {
     let newQty = carrito[productoEliminado].qty - 1;
     if (newQty > 0) {
       carrito[productoEliminado].qty = newQty;
     } else {
       carrito.splice(productoEliminado, 1);
     }
-  } else if (e.target.className === "add-one") {
+  } else if (e.target.getAttribute("name") === "add-one") {
     carrito[productoEliminado].qty++;
   }
   mostrarCarrito();
