@@ -24,7 +24,7 @@ const getProducts = async () => {
     anchor.setAttribute("data-categoria", categoria);
     anchor.innerHTML = categoria;
     anchor.onclick = () => {
-      document.getElementById(`scrollInto${categoria}`).scrollIntoView();
+      document.getElementById(`scrollInto${categoria}`).scrollIntoView({behavior: "smooth"});
     };
     listaLateral.appendChild(anchor);
   });
@@ -115,7 +115,7 @@ function crearCard(producto) {
         </div>
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
             <div class="text-center">
-            <button class="btn btn-outline-dark mt-auto" name="${idButton}">Añadir al carrito</button>
+            <button class="btn btn-outline-dark mt-auto" name="${idButton}">Agregar</button>
             </div>
         </div>
     </div>`;
@@ -144,13 +144,15 @@ function mostrarCarrito() {
   carrito.forEach((producto) => {
     filasCarrito += `<tr>
         <td class="colCarrito">
-            <div class="me-3">${producto.name}</div>
+            <div class="me-lg-3 me-md-3 text-center">${producto.name}</div>
             <div><img src="${producto.image}" style="width: 100px"></div>
         </td>
-        <td class="cantidad">
-        <button class="remove-one btn btn-outline-dark mt-auto me-2" id=${producto.id}>-</button>
-        ${producto.qty}
-        <button class="add-one btn btn-outline-dark mt-auto ms-2" id=${producto.id}>+</button>
+        <td>
+            <div class="cantidad">
+            <button class="remove-one btn btn-outline-dark mt-auto me-2" id=${producto.id}>-</button>
+            ${producto.qty}
+            <button class="add-one btn btn-outline-dark mt-auto ms-2" id=${producto.id}>+</button>
+            </div>
         </td>
         <td>$${producto.price * producto.qty}</td>
         <td><button class="remove btn btn-outline-dark mt-auto" id=${producto.id}>Quitar</button></td>

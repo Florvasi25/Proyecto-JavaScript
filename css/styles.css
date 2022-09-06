@@ -7410,9 +7410,9 @@ textarea.form-control-lg {
   margin-bottom: 1.5rem !important;
 }
 
-.mb-5 {
+/* .mb-5 {
   margin-bottom: 3rem !important;
-}
+} */
 
 .mb-auto {
   margin-bottom: auto !important;
@@ -11365,6 +11365,15 @@ textarea.form-control-lg {
   color: black;
 }
 
+.tituloCategoria {
+  padding: 5px 15px;
+  margin: 50px;
+  border: transparent;
+  border-color: rgba(211, 212, 213, 0.5);
+  border-radius: 5px;
+  background-color: var(--bs-gray-200);
+}
+
 .colCarrito {
   display: flex;
 
@@ -11382,7 +11391,7 @@ textarea.form-control-lg {
     flex-direction: column;
   }
   .dropdown-menu.show {
-    width: 350px;
+    width: 400px;
   }
   .cantidad {
     display: flex;
