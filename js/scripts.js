@@ -45,19 +45,19 @@ const getProducts = async () => {
 function createFavButton(producto) {
   const botonFav = `add-fav${producto.id}`;
   let anchorFav = document.createElement("a");
-  anchorFav.textContent = `F`;
-  anchorFav.className = `badge bg-dark text-white position-absolute`;
+  anchorFav.innerHTML = `<img class="imgFav"src="./Imagenes/favIcon.png">`;
+  anchorFav.className = `badge text-white position-absolute`;
   anchorFav.style.cssText = `top: 0.5rem; right: 0.5rem`;
   anchorFav.setAttribute("name", botonFav);
   anchorFav.onclick = () => {
       let indexFavorito = favoritos.findIndex((p) => p.id === producto.id);
       if (indexFavorito == -1) {
-        // let tituloFavorito = document.createElement("p");
-        // tituloFavorito.innerHTML = `<p class="tituloCategoria">Favoritos</p>`;
-        // tituloFav.appendChild(tituloFavorito);
       favoritos.push(producto);
     } else {
       favoritos.splice(indexFavorito, 1);
+    }
+    if (favoritos !== 0) {
+        
     }
     localStorage.setItem("favoritos", JSON.stringify(favoritos));
     imprimirFavoritos();
@@ -141,6 +141,14 @@ function imprimirFavoritos() {
   favoritos.forEach((producto) => {
     document.getElementById("cardsFavorite").appendChild(crearCard(producto));
   });
+    const ubicacionTituloFav = document.getElementById("textoVacio")
+    ubicacionTituloFav.innerHTML = ""
+    if (favoritos.length > 0) {
+        let tituloFavorito = document.createElement("p");
+        tituloFavorito.className = `tituloCategoria d-flex`
+        tituloFavorito.innerHTML = `Favoritos`;
+        ubicacionTituloFav.appendChild(tituloFavorito);
+    }
 }
 
 function mostrarCarrito() {
@@ -148,7 +156,7 @@ function mostrarCarrito() {
   carrito.forEach((producto) => {
     filasCarrito += `<tr>
         <td class="colCarrito">
-            <div class="me-lg-3 me-md-3 text-center">${producto.name}</div>
+            <div class="me-lg-3 me-md-3 text-wrap" style="width:125px">${producto.name}</div>
             <div><img src="${producto.image}" style="width: 100px"></div>
         </td>
         <td>
@@ -208,7 +216,7 @@ document.getElementById("myDropdown").addEventListener("click", function (e) {
 });
 
 Toastify({
-  text: "Envío gratis con tu compra mayor a $1500",
+  text: "Envío gratis con tu compra mayor a $3500",
   duration: 5000,
   destination: "https://github.com/apvarun/toastify-js",
   newWindow: true,

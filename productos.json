@@ -5,8 +5,7 @@
         "price": 1200,
         "image": "./Imagenes/pizza-1.png",
         "category": "Pizzas",
-        "quantity": 1,
-        "favorite": false
+        "quantity": 1
     },
     {
         "id": 2,
@@ -15,8 +14,7 @@
         "image": "./Imagenes/pizza-2.png",
         "description": "Pizza con salchicha italiana picante.",
         "category": "Pizzas",
-        "quantity": 1,
-        "favorite": true
+        "quantity": 1
     },
     {
         "id": 3,
@@ -24,8 +22,7 @@
         "price": 1100,
         "image": "./Imagenes/hamburguesa-1.png",
         "category": "Hamburguesas",
-        "quantity": 1,
-        "favorite": true
+        "quantity": 1
     },
     {
         "id": 4,
@@ -34,46 +31,102 @@
         "image": "./Imagenes/hamburguesa-2.png",
         "description": "Hamburguesa de carne 100% vacuna.",
         "category": "Hamburguesas",
-        "quantity": 1,
-        "favorite": true
+        "quantity": 1
     },
     {
         "id": 5,
         "name": "Empanda Criolla",
-        "price": 1050,
+        "price": 170,
         "image": "./Imagenes/empanada-1.png",
         "category": "Empanadas",
-        "quantity": 1,
-        "favorite": true
+        "quantity": 1
     },
     {
         "id": 6,
         "name": "Empanada de Atún",
-        "price": 1050,
+        "price": 180,
         "image": "./Imagenes/empanada-2.png",
         "description": "Empanada de atún, aceitunas y cebolla de verdeo",
         "category": "Empanadas",
-        "quantity": 1,
-        "favorite": false
+        "quantity": 1
     },
     {
         "id": 7,
-        "name": "Pizza Salame",
-        "price": 1300,
-        "image": "./Imagenes/pizza-2.png",
-        "description": "",
+        "name": "Pizza Especial",
+        "price": 1450,
+        "image": "./Imagenes/pizza-3.png",
+        "description": "Jamón, Pimientos y Aceitunas Verdes",
         "category": "Pizzas",
-        "quantity": 1,
-        "favorite": false
+        "quantity": 1
     },
     {
         "id": 8,
-        "name": "Pizza",
-        "price": 1300,
-        "image": "./Imagenes/pizza-2.png",
-        "description": "Pizza con salchicha italiana picante.",
+        "name": "Pizza con Rúcula y Jamón Crudo",
+        "price": 1500,
+        "image": "./Imagenes/pizza-4.png",
         "category": "Pizzas",
-        "quantity": 1,
-        "favorite": false
+        "quantity": 1
+    },
+    {
+        "id": 9,
+        "name": "Pizza con Cebolla",
+        "price": 1200,
+        "image": "./Imagenes/pizza-5.png",
+        "description": "Cebolla salteada y aceitunas negras",
+        "category": "Pizzas",
+        "quantity": 1
+    },
+    {
+        "id": 10,
+        "name": "Hamburguesa Doble",
+        "price": 1200,
+        "image": "./Imagenes/hamburguesa-3.png",
+        "description": "Triple Queso, Pepinos y Mostaza",
+        "category": "Hamburguesas",
+        "quantity": 1
+    },
+    {
+        "id": 11,
+        "name": "Hamburguesa con Bacon",
+        "price": 1200,
+        "image": "./Imagenes/hamburguesa-4.png",
+        "description": "",
+        "category": "Hamburguesas",
+        "quantity": 1
+    },
+    {
+        "id": 12,
+        "name": "Hamburguesa Doritos",
+        "price": 1200,
+        "image": "./Imagenes/hamburguesa-5.png",
+        "description": "Clásica con crunchy extra",
+        "category": "Hamburguesas",
+        "quantity": 1
+    },
+    {
+        "id": 13,
+        "name": "Empanada Árabe",
+        "price": 160,
+        "image": "./Imagenes/empanada-3.png",
+        "category": "Empanadas",
+        "quantity": 1
+    },
+    {
+        "id": 14,
+        "name": "Pizza Jalisco",
+        "price": 1400,
+        "image": "./Imagenes/pizza-6.png",
+        "description": "Con rodajas de Jalapeño. Picante",
+        "category": "Pizzas",
+        "quantity": 1
+    },
+    {
+        "id": 15,
+        "name": "Pizza Alfredo",
+        "price": 1350,
+        "image": "./Imagenes/pizza-7.png",
+        "description": "Brócoli y Salsa Alfredo",
+        "category": "Pizzas",
+        "quantity": 1
     }
 ]

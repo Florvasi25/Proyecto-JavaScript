@@ -698,8 +698,6 @@ progress {
   margin-top: var(--bs-gutter-y);
 }
 
-
-
 .row-cols-auto > * {
   flex: 0 0 auto;
   width: auto;
@@ -3961,7 +3959,7 @@ textarea.form-control-lg {
 }
 
 .nav-link {  
-  padding: 0.2rem;
+  padding: 0.5rem;
 }
 
 .nav-tabs {
@@ -7144,9 +7142,9 @@ textarea.form-control-lg {
   align-items: flex-end !important;
 }
 
-.align-items-center {
-  align-items: center !important;
-}
+/* .align-items-center {
+  align-items: start;
+} */
 
 .align-items-baseline {
   align-items: baseline !important;
@@ -7878,7 +7876,7 @@ textarea.form-control-lg {
 
 .bg-dark {
   --bs-bg-opacity: 1;
-  background-image: url(https://i.blogs.es/fff4ca/pizzas/1366_2000.jpg); 
+  background-color: #000; 
 }
 
 .bg-black {
@@ -11340,7 +11338,9 @@ textarea.form-control-lg {
   color: #000;
   transition: background-color 0.5s;
   position: relative;
+  cursor: pointer;
 }
+
 .subtituloCategoria::after {
   content: "";
   position: absolute;
@@ -11376,7 +11376,16 @@ textarea.form-control-lg {
 
 .colCarrito {
   display: flex;
+}
 
+.imgFav {
+  width: 20px;
+}
+
+.imagenBanner {
+  background-image: url(../Imagenes/banner.png);
+  width: 100%;
+  background-repeat:initial;
 }
 
 @media (max-width: 700px) {
