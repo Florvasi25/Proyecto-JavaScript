@@ -114,7 +114,7 @@ function crearCard(producto) {
             <div class="text-center">
             <h4 class="fw-bolder">${producto.name}</h4>
             <p class="description fs-">${producto?.description || ""}</p>
-            <span class="text-muted">$${producto.price}</span>
+            <span style="font-size:20px">$${producto.price}</span>
             </div>
         </div>
         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
@@ -161,19 +161,13 @@ function mostrarCarrito() {
         </td>
         <td>
             <div class="cantidad">
-            <button name="remove-one" class="btn btn-outline-dark mt-auto" id=${
-              producto.id
-            }>-</button>
+            <button name="remove-one" class="btn btn-outline-dark mt-auto me-1" id=${producto.id}>-</button>
             ${producto.qty}
-            <button name="add-one" class="btn btn-outline-dark mt-auto" id=${
-              producto.id
-            }>+</button>
+            <button name="add-one" class="btn btn-outline-dark mt-auto ms-1" id=${producto.id}>+</button>
             </div>
         </td>
         <td>$${producto.price * producto.qty}</td>
-        <td><button name="remove" class="btn btn-outline-dark mt-auto" id=${
-          producto.id
-        }>Quitar</button></td>
+        <td><button name="remove" class="btn btn-outline-dark mt-auto" id=${producto.id}>Quitar</button></td>
     </tr>`;
   });
   document.getElementById("productos-agregados").innerHTML = filasCarrito;
@@ -186,7 +180,7 @@ function precioTotal() {
     precioTotal += producto.price * producto.qty;
   });
   document.getElementById("precioTotal").innerHTML = `<div>
-    <p>TOTAL: $${precioTotal}</p>
+    <p class="total">TOTAL: $${precioTotal}</p>
     </div>`;
 }
 
