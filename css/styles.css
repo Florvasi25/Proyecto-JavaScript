@@ -3589,6 +3589,12 @@ textarea.form-control-lg {
   width: 700px;
 }
 
+@media (max-width: 700px) {
+  .dropdown-menu {
+    padding: 0.5rem, 1rem;
+  }
+}
+
 .dropdown-menu[data-bs-popper] {
   top: 100%;
   left: 0;
