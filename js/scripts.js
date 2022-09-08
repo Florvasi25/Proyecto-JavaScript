@@ -103,7 +103,6 @@ function createFavButton(producto) {
         }
         localStorage.setItem("favoritos", JSON.stringify(favoritos));
         imprimirFavoritos();
-        agregarAlCarrito(producto);
     };
     return anchorFav;
 }
@@ -118,6 +117,7 @@ function imprimirFavoritos() {
     }
     favoritos.forEach((producto) => {
         document.getElementById("cardsFavorite").appendChild(crearCard(producto));
+        agregarAlCarrito(producto);
         let botonesFav = document.getElementsByName(`favIcon${producto.id}`);
         botonesFav.forEach((icono) => {
             icono.src = "./Imagenes/favIconFull.png";
